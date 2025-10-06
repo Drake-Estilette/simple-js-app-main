@@ -35,6 +35,16 @@ let pokemonRepository = (function () {
 // ... add more Pokémon as needed
 
 function printPokemonName(pokemon) {
-  console.log(pokemon);
+  let pokemonListElement = document.querySelector(".pokemon-list");
+  let listItem = document.createElement("li");
+  let button = document.createElement("button");
+  button.innerText = pokemon.name;
+  button.classlist.add("pokemon-button");
+  listItem.appendChild(button);
+  pokemonListElement.appendChild(listItem);
 }
-pokemonRepository.getAll().forEach(printPokemonName);
+function printPokemonName(pokemon) {
+  console.log(pokemon.name);
+}
+
+pokemonRepository.getAll.forEach(printPokemonName);

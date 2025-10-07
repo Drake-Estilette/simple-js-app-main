@@ -26,25 +26,30 @@ let pokemonRepository = (function () {
       return "Input is not a valid Pokémon object.";
     }
   }
+  function addToList(pokemon) {
+    let pokemonListElement = document.querySelector(".pokemon-list");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("pokemon-button");
+    listItem.appendChild(button);
+    pokemonListElement.appendChild(listItem);
+    button.addEventListener("click", function () {
+      showDetails(pokemon);
+    });
+  }
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
   return {
     getAll: getAll,
     add: add,
+    addToList: addToList,
   };
 })();
 
 // ... add more Pokémon as needed
 
-function printPokemonName(pokemon) {
-  let pokemonListElement = document.querySelector(".pokemon-list");
-  let listItem = document.createElement("li");
-  let button = document.createElement("button");
-  button.innerText = pokemon.name;
-  button.classlist.add("pokemon-button");
-  listItem.appendChild(button);
-  pokemonListElement.appendChild(listItem);
-}
-function printPokemonName(pokemon) {
-  console.log(pokemon.name);
-}
-
-pokemonRepository.getAll.forEach(printPokemonName);
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addToList(pokemon);
+});

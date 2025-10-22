@@ -1,9 +1,19 @@
 body {
   background-color: #50c878;
 }
+h1 {
+  text-align: center;
+}
+ul {
+  width: 100%;
+  margin: 0 auto;
+  list-style-type: none;
+}
+li {
+  text-align: center;
+  margin-left: -70px;
+}
 .pokemon-button {
-  display: grid;
-  place-items: center;
   background: #a4c9ef;
   padding: 1.4em;
   border-radius: 10px;
@@ -13,7 +23,8 @@ body {
   cursor: pointer;
   transition: transform 0.5s;
   margin-top: 1em;
-  width: 100px;
+  width: 100%;
+  max-width: 200px;
 }
 
 .pokemon-button:hover {
@@ -23,6 +34,29 @@ body {
     0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
   transform: translateY(0.5em);
+}
+#modal-container {
+  display: none;
+}
+#modal-container.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  /* to show it above other content */
+  z-index: 999;
+
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto;
+
+  /* this is used to center the modal */
+  display: grid;
+  text-align: center;
 }
 /* Styles for screens smaller than 768px (e.g., mobile phones) */
 @media (max-width: 767px) {

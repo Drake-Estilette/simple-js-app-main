@@ -1,4 +1,4 @@
-let pokemonRepository = function () {
+let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
   let modalContainer = document.querySelector("#modal-container");
@@ -103,26 +103,25 @@ let pokemonRepository = function () {
     if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
       hideModal();
     }
-
-    return {
-      getAll: getAll,
-      add: add,
-      addToList: addToList,
-      loadList: loadList,
-      loadDetails: loadDetails,
-      showModal: showModal,
-      hideModal: hideModal,
-    };
-  })();
-
-  pokemonRepository.loadList().then(function () {
-    pokemonRepository.getAll().forEach(function (pokemon) {
-      pokemonRepository.addToList(pokemon);
-    });
   });
-  function showDetails(pokemon) {
-    pokemonRepository.loadDetails(pokemon).then(function () {
-      console.log(pokemon);
-    });
-  }
-};
+  return {
+    getAll: getAll,
+    add: add,
+    addToList: addToList,
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showModal: showModal,
+    hideModal: hideModal,
+  };
+})();
+
+pokemonRepository.loadList().then(function () {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addToList(pokemon);
+  });
+});
+function showDetails(pokemon) {
+  pokemonRepository.loadDetails(pokemon).then(function () {
+    pokemonRepository.showModal(pokemon);
+  });
+}

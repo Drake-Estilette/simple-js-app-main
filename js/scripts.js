@@ -69,7 +69,7 @@ let pokemonRepository = (function () {
       modalImage.src = pokemon.imageUrl;
       modalImage.alt = pokemon.name;
       let modalTitle = document.getElementById("pokemonModalLabel");
-      // modalTitle.innerText = pokemon.types;
+      modalTitle.innerText = pokemon.name;
       let modalHeight = document.getElementById("modal-height");
       modalHeight.innerText = "Height: " + pokemon.height;
       $("#pokemonModal").modal("show");

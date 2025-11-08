@@ -25,30 +25,31 @@
         <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
       </form>
     </nav>
-    <div id="modal-container" class="container">
-      <div
-        class="modal fade"
-        id="pokemonModel"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="pokemonModelLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="model-content">
-            <div class="model-header">
-              <h5 class="modal-title" id="pokemonModelLabel"></h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-dismiss="model"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body text-center">
-              <p id="modal-height"></p>
-              <img id="modal-image" class="img-fluid mb-3" alt="" />
-            </div>
+    <div id="modal-container" class="container"></div>
+    <div
+      class="modal fade"
+      id="pokemonModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="pokemonModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pokemonModalLabel"></h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <p id="modal-height"></p>
+            <img id="modal-image" class="img-fluid mb-3" alt="" />
           </div>
         </div>
       </div>

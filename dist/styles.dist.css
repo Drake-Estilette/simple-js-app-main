@@ -1,8 +1,9 @@
+h1,
+li {
+  text-align: center;
+}
 body {
   background-color: #50c878;
-}
-h1 {
-  text-align: center;
 }
 ul {
   width: 100%;
@@ -10,7 +11,6 @@ ul {
   list-style-type: none;
 }
 li {
-  text-align: center;
   margin-left: -70px;
 }
 .pokemon-button {
@@ -19,30 +19,27 @@ li {
   border-radius: 10px;
   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
     -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid transparent;
   cursor: pointer;
   transition: transform 0.5s;
   margin-top: 1em;
   width: 100%;
   max-width: 200px;
 }
-
 .pokemon-button:hover {
   box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
-    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
-    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7), -0.5px -0.5px 0 #fff,
+    0.5px 0.5px 0 rgba(0, 0, 0, 0.15), 0 12px 10px -10px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
   transform: translateY(0.5em);
 }
 .list-group-item {
   margin: 20px auto;
-  border: black 1px solid;
+  border: 1px solid #000;
 }
-
 .modal {
   display: grid;
-  background: white;
+  background: #fff;
   border-radius: 5px;
   max-width: 300px;
   margin: 0 auto;
@@ -52,7 +49,6 @@ li {
   justify-items: center;
   overflow: auto;
 }
-/* Styles for screens smaller than 768px (e.g., mobile phones) */
 @media (max-width: 767px) {
   body {
     font-size: 14px;
@@ -60,10 +56,7 @@ li {
   .container {
     width: 95%;
   }
-  /* Specific mobile-only styles */
 }
-
-/* Styles for screens between 768px and 1024px (e.g., tablets) */
 @media (min-width: 768px) and (max-width: 1024px) {
   body {
     font-size: 16px;
@@ -71,10 +64,7 @@ li {
   .container {
     width: 90%;
   }
-  /* Specific tablet-only styles */
 }
-
-/* Styles for screens larger than 1024px (e.g., desktops) */
 @media (min-width: 1025px) {
   body {
     font-size: 18px;
@@ -83,5 +73,4 @@ li {
     max-width: 1200px;
     width: 80%;
   }
-  /* Specific desktop-only styles */
 }

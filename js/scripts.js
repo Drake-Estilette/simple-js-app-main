@@ -3,15 +3,23 @@ let pokemonRepository = (function () {
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
   let modalContainer = document.querySelector("#modal-container");
 
-  getAll: function getAll() {
+  function addSingle(item) {
+    if (validate(item)) {
+      pokemonList.push(item);
+    }
+  }
+  function getAll() {
     return pokemonList;
   }
-  add: function add(pokemon) {
-    if (typeof pokemon === "object" && "name" in pokemon) {
-      pokemonList.push(pokemon);
+  function add(pokemon) {
+    if (Array.isArray(pokemon)) {
+      pokemonList.forEach(addSingle);
     } else {
-      return "Input is not a valid Pokémon object.";
+      addSingle(pokemon);
     }
+  }
+  function validate(item) {
+    return typeof item === "object" && item.name;
   }
   function addToList(pokemon) {
     let pokemonListElement = document.querySelector(".pokemon-list");
